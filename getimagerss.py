@@ -27,7 +27,7 @@ reddit_read_only = praw.Reddit(client_id="FROM ENV",		         # your client id
 				client_secret="FROM ENV",	     # your client secret
 				user_agent="FROM ENV")	                         # your user agent
 
-subreddit = reddit_read_only.subreddit("hentai")
+subreddit = reddit_read_only.subreddit("FROM ENV")
 
 for post in subreddit.stream.submissions():                                     
     if ( tipe(post.url) != "text/html"):  #if (tipe(post.url) != 'None'):                                                         
