@@ -23,9 +23,9 @@ def remove_file(str1):
     else:
         print("The file does not exist") 
         
-reddit_read_only = praw.Reddit(client_id="EeKMzNMs9PYrbz2Qc0K0tQ",		         # your client id
-							client_secret="H23SeXZSt5y4g4gg16vAZ80S63Ob2Q",	     # your client secret
-							user_agent="Photon 1/1.0")	                         # your user agent
+reddit_read_only = praw.Reddit(client_id="FROM ENV",		         # your client id
+				client_secret="FROM ENV",	     # your client secret
+				user_agent="FROM ENV")	                         # your user agent
 
 subreddit = reddit_read_only.subreddit("hentai")
 
