@@ -9,3 +9,7 @@ This is a progressive Reddit image fetcher which will fetch recent 100 posts, an
 ```
 pip install praw wget pandas mime
 ```
+## Run the Program
+```
+python getimagerss.py
+```
