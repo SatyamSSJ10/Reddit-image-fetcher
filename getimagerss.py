@@ -1,10 +1,9 @@
 #Requesting Reddit API to get image link and then downloading the image through python
-#Link file for discord_bot.py
+
 import os
 import subprocess
 import praw
 import wget
-import urllib
 import mimetypes
 import pandas as pd
 
@@ -15,33 +14,17 @@ def tipe(link, strict=True):
     return link_type
 
 def down(z, str):
-    r = wget.download(z, str)
+    r = wget.download(z, str)	# Parameter String, String
+    
+reddit_data = praw.Reddit(client_id="Client ID",		         # your client id \ Parameter String
+			       client_secret="Client Secret",	         # your client secret \ Parameter String
+			       user_agent="Useragent for Reddit")	 # your user agent \ Parameter String
 
-def remove_file(str1):
-    if os.path.exists(str1):
-        os.remove(str1)
-    else:
-        print("The file does not exist") 
-        
-reddit_read_only = praw.Reddit(client_id="FROM ENV",		         # your client id
-				client_secret="FROM ENV",	     # your client secret
-				user_agent="FROM ENV")	                         # your user agent
+subreddit = reddit_data.subreddit("subreddit_name") #Parameter String
 
-subreddit = reddit_read_only.subreddit("FROM ENV")
-
-for post in subreddit.stream.submissions():                                     
-    if ( tipe(post.url) != "text/html"):  #if (tipe(post.url) != 'None'):                                                         
+for post in subreddit.stream.submissions():     #Fethces New Submission                                
+    if ( tipe(post.url) != "text/html"):                                                  
         print(post.url)
-        down(post.url,"x.jpg")
+        down(post.url,"download.jpg")
         print('Image Successfully Downloaded', post.url)
-        #POST IMAGE TO DISCORD
-        remove_file("x.jpg")
-        
-        
-        
-#async def announce(CHANNEL):
-#await channel.send(file=discord.File('*.png'))       #Sending File Message ETC.
-
-
-
-
+  
