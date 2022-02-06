@@ -1,7 +1,6 @@
 #Requesting Reddit API to get image link and then downloading the image through python
 
 import os
-import subprocess
 import praw
 import wget
 import mimetypes
