@@ -4,6 +4,7 @@ import os
 import praw
 import wget
 import mimetypes
+import gc
 import pandas as pd
 
 def tipe(link, strict=True):
@@ -26,4 +27,6 @@ for post in subreddit.stream.submissions():     #Fethces New Submission
         print(post.url)
         down(post.url,"download.jpg")
         print('Image Successfully Downloaded', post.url)
+	del post
+	gc.collect()
   
