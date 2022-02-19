@@ -11,5 +11,5 @@ pip install praw wget pandas mime
 ```
 ## Run the Program
 ```
-python getimagerss.py
+python3 getimagerss.py
 ```
