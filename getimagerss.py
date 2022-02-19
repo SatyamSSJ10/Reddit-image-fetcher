@@ -28,5 +28,4 @@ for post in subreddit.stream.submissions():     #Fethces New Submission
         down(post.url,"download.jpg")
         print('Image Successfully Downloaded', post.url)
 	del post
-	gc.collect()
-  
+	gc.collect()   #deleting garbages as post saves objects
